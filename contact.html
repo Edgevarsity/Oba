@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kotech</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Kotech</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="career.html">Careers</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Contact Us</h1>
+        <p>Have a question about coding, graphic design, or books?
+            We would love to hear from you!</p>
+    </section>
+
+    <main class="contact-container">
+
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Contact the Kotech team using the details below.</p>
+
+            <div class="info-item">
+                <h3>📧 Email</h3>
+                <p>kotechcoding@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <h3>📞 Phone</h3>
+                <p>08022470345 or 08037838031</p>
+            </div>
+
+            <div class="info-item">
+                <h3>📍 Location</h3>
+                <p>Nigeria</p>
+            </div>
+
+            <div class="info-item">
+                <h3>💻 What We Do</h3>
+                <p>Learn coding, explore graphic design, and discover books.</p>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                    placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                    placeholder="Enter your email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject"
+                    placeholder="What is your message about?" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="6"
+                    placeholder="Write your message here..." required></textarea>
+
+                <button type="submit">Send Message</button>
+
+                <p id="formStatus" role="status"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kotech. All rights reserved.</p>
+        <p>Learn coding. Create designs. Discover books.</p>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formStatus = document.getElementById("formStatus");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            formStatus.textContent =
+                "succesfully sent";
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>

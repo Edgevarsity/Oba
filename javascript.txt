@@ -1,0 +1,585 @@
+index.js
+
+const searchInput = document.querySelector("#searh");
+const searchButton = document.querySelector("#searchButton");
+const clearButton = document.querySelector("#clearButton");
+const results = document.querySelector("#results");
+const emptyState = document.querySelector("#emptyState");
+
+const searchableItems = [
+  {
+    title: "Story Books",
+    description: "Browse story books",
+    url: "/website/shop/shop.html",
+    keywords: "book books story stories reading",
+  },
+  {
+    title: "Watch Videos",
+    description: "Browse videos and tutorials",
+    url: "/website/v/video.html",
+    keywords: "video videos watch tutorial tutorials",
+  },
+];
+
+function searchPages() {
+  const query = searchInput.value.trim().toLowerCase();
+  results.replaceChildren();
+
+  if (!query) {
+    emptyState.hidden = true;
+    return;
+  }
+
+  const matches = searchableItems.filter((item) => {
+    const searchableText =
+      `${item.title} ${item.description} ${item.keywords}`.toLowerCase();
+
+    return query.split(/\s+/).every((word) => searchableText.includes(word));
+  });
+
+  for (const item of matches) {
+    const link = document.createElement("a");
+    link.href = item.url;
+    link.textContent = `${item.title} — ${item.description}`;
+    results.append(link);
+  }
+
+  emptyState.hidden = matches.length > 0;
+}
+
+searchInput.addEventListener("input", searchPages);
+searchButton.addEventListener("click", searchPages);
+
+clearButton.addEventListener("click", () => {
+  searchInput.value = "";
+  searchPages();
+  searchInput.focus();
+});
+
+searchInput.addEventListener("input", () => {
+  clearButton.hidden = searchInput.value.length === 0;
+});
+
+cources.js
+
+
+const user = JSON.parse(sessionStorage.getItem("kotechUser") || "null");
+
+if (!user) {
+  window.location.href = "account.html";
+} else {
+  document.getElementById("welcomeMessage").textContent =
+    "Welcome, " + user.name + "!";
+
+  const applications = JSON.parse(
+    localStorage.getItem("kotechApplications") || "[]"
+  );
+
+  const myApplications = applications.filter(
+    application => application.email.toLowerCase() === user.email.toLowerCase()
+  );
+
+  const list = document.getElementById("myCourseList");
+  const empty = document.getElementById("noCourses");
+
+  empty.hidden = myApplications.length > 0;
+
+  myApplications.forEach(application => {
+    const card = document.createElement("div");
+    card.style.padding = "15px";
+    card.style.marginTop = "15px";
+    card.style.border = "1px solid #ddd";
+    card.style.borderRadius = "8px";
+
+    const title = document.createElement("h3");
+    title.textContent = application.course;
+
+    const status = document.createElement("p");
+    status.textContent = "Application submitted";
+
+    card.append(title, status);
+    list.appendChild(card);
+  });
+}
+
+document.getElementById("logoutButton").addEventListener("click", () => {
+  sessionStorage.removeItem("kotechUser");
+  window.location.href = "account.html";
+});
+
+shop.js
+
+
+const books = {
+    "Adventure Storybook": 2000,
+    "HTML for Beginners": 3500,
+    "CSS Storybook": 2500, 
+    "maths textbook": 3000
+};
+
+const prices = {
+    "Adventure Storybook": 2000,
+    "HTML for Beginners": 3500,
+    "CSS Storybook": 2500,
+    "maths textbook": 3000
+};
+
+const message = document.getElementById("message");
+const search = document.getElementById("bookSearch");
+const cards = document.querySelectorAll(".book-card");
+
+function getCart() {
+    try {
+        return JSON.parse(localStorage.getItem("cart")) || {};
+    } catch {
+        return {};
+    }
+}
+
+function updateCartCount() {
+    const cart = getCart();
+
+    const count = Object.values(cart).reduce((sum, quantity) => {
+        return sum + (
+            Number.isSafeInteger(quantity) && quantity > 0
+                ? quantity
+                : 0
+        );
+    }, 0);
+
+    document.getElementById("cartCount").textContent = count;
+}
+
+document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const quantityInput =
+            document.getElementById(button.dataset.quantity);
+
+        const quantity = Number(quantityInput.value);
+
+        if (!Number.isInteger(quantity) ||
+            quantity < 1 || quantity > 99) {
+            message.textContent =
+                "Please choose a quantity between 1 and 99.";
+            return;
+        }
+
+        const cart = getCart();
+        const newQuantity = (cart[name] || 0) + quantity;
+
+        if (!Number.isSafeInteger(newQuantity) || newQuantity > 999) {
+            message.textContent = "The quantity is too large.";
+            return;
+        }
+
+        cart[name] = newQuantity;
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCartCount();
+
+        message.textContent =
+            `${quantity} × ${name} added to your cart!`;
+    });
+});
+
+search.addEventListener("input", () => {
+    const query = search.value.trim().toLowerCase();
+
+    cards.forEach(card => {
+        card.hidden = !card.textContent.toLowerCase().includes(query);
+    });
+});
+
+updateCartCount();
+
+cart.js
+
+
+const cartItems = document.getElementById("cartItems");
+const total = document.getElementById("total");
+const bookCount = document.getElementById("bookCount");
+const checkoutBtn = document.getElementById("checkoutBtn");
+
+const prices = {
+    "Adventure Storybook": 2000,
+        "HTML for Beginners": 3500,
+    "CSS Storybook": 2500,
+    "mathemtics textbook":5000
+};
+
+function showCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    const prices = {
+    "Adventure Storybook": 2000,
+    "HTML for Beginners": 3500,
+    "CSS Storybook": 2500,
+    "mathemtics textbook":5000
+};
+
+    cartItems.replaceChildren();
+
+    let totalPrice = 0;
+    let totalBooks = 0;
+
+    for (const name in cart) {
+        const quantity = cart[name];
+        const price = prices[name] || 0;
+
+        if (!Number.isInteger(quantity) || quantity < 1) continue;
+
+        totalBooks += quantity;
+        totalPrice += quantity * price;
+
+        const item = document.createElement("div");
+        item.className = "item";
+
+        const title = document.createElement("h3");
+        title.textContent = name;
+
+        const qty = document.createElement("p");
+        qty.textContent = `Quantity ordered: ${quantity}`;
+
+        const subtotal = document.createElement("p");
+        subtotal.textContent =
+            `Subtotal: ₦${(quantity * price).toLocaleString()}`;
+
+        const minus = document.createElement("button");
+        minus.textContent = "−";
+        minus.onclick = () => changeQuantity(name, -1);
+
+        const plus = document.createElement("button");
+        plus.textContent = "+";
+        plus.onclick = () => changeQuantity(name, 1);
+
+        const remove = document.createElement("button");
+        remove.textContent = "Remove";
+        remove.onclick = () => removeBook(name);
+
+        item.append(title, qty, subtotal, minus, plus, remove);
+        cartItems.appendChild(item);
+    }
+
+    if (totalBooks === 0) {
+        cartItems.textContent = "Your cart is empty.";
+    }
+
+    total.textContent = `Total: ₦${totalPrice.toLocaleString()}`;
+    bookCount.textContent =
+        `${totalBooks} ${totalBooks === 1 ? "book" : "books"}`;
+}
+
+
+
+function changeQuantity(name, amount) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    const newQuantity = (cart[name] || 0) + amount;
+
+    if (newQuantity < 1) {
+        delete cart[name];
+    } else {
+        cart[name] = newQuantity;
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
+}
+
+function removeBook(name) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    delete cart[name];
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
+}
+
+checkoutBtn.addEventListener("click", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    if (Object.keys(cart).length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    alert("Your cart is ready! ");
+});
+
+showCart();
+
+checkout.js
+
+
+const cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+const prices = {
+    "Adventure Storybook": 2000,
+    "HTML for Beginners": 3500,
+    "CSS Storybook": 2500,
+    "mathemtics textbook":5000
+};
+
+const summary = document.getElementById("orderSummary");
+const totalElement = document.getElementById("orderTotal");
+const form = document.getElementById("checkoutForm");
+const status = document.getElementById("status");
+
+let total = 0;
+let count = 0;
+
+for (const name in cart) {
+    const quantity = cart[name];
+    const price = prices[name];
+
+    if (!Number.isInteger(quantity) || quantity < 1 ||
+        !Number.isFinite(price)) continue;
+
+    total += price * quantity;
+    count += quantity;
+
+    const item = document.createElement("p");
+    item.textContent =
+        `${name} × ${quantity} = ₦${(price * quantity).toLocaleString()}`;
+
+    summary.appendChild(item);
+}
+
+totalElement.textContent =
+    `Total: ₦${total.toLocaleString()} (${count} books)`;
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (count === 0) {
+        status.textContent = "Your cart is empty.";
+        return;
+    }
+
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+
+    if (!name || !phone || !address) {
+        status.textContent = "Please complete all fields.";
+        return;
+    }
+
+    const message =
+        `Kotech Book Order\n` +
+        `Customer: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Address: ${address}\n` +
+        `Books: ${count}\n` +
+        `Total: ₦${total.toLocaleString()}\n` +
+        Object.entries(cart)
+            .map(([book, qty]) => `${book} × ${qty}`)
+            .join("\n");
+
+    status.textContent =
+        "your order is ready pls wait before it arrives.";
+
+    console.log(message);
+});
+
+account.js
+
+
+const registerForm = document.getElementById("registerForm");
+const loginForm = document.getElementById("loginForm");
+const message = document.getElementById("accountMessage");
+
+document.getElementById("showRegister").addEventListener("click", () => {
+  registerForm.hidden = false;
+  loginForm.hidden = true;
+  document.getElementById("showRegister").classList.add("active");
+  document.getElementById("showLogin").classList.remove("active");
+  message.textContent = "";
+});
+
+document.getElementById("showLogin").addEventListener("click", () => {
+  registerForm.hidden = true;
+  loginForm.hidden = false;
+  document.getElementById("showLogin").classList.add("active");
+  document.getElementById("showRegister").classList.remove("active");
+  message.textContent = "";
+});
+
+function getAccounts() {
+  return JSON.parse(localStorage.getItem("kotechAccounts") || "[]");
+}
+
+registerForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("registerName").value.trim();
+  const email = document.getElementById("registerEmail").value.trim().toLowerCase();
+  const password = document.getElementById("registerPassword").value;
+
+  const accounts = getAccounts();
+
+  if (accounts.some(account => account.email === email)) {
+    message.textContent = "This email already has an account. Please log in.";
+    return;
+  }
+
+  accounts.push({ name, email, password });
+
+  localStorage.setItem("kotechAccounts", JSON.stringify(accounts));
+
+  sessionStorage.setItem("kotechUser", JSON.stringify({ name, email }));
+
+  message.textContent = "Account created! Opening your courses...";
+
+  setTimeout(() => {
+    window.location.href = "/website/my-cources/my-courses.html";
+  }, 1000);
+});
+
+loginForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+  const password = document.getElementById("loginPassword").value;
+
+  const account = getAccounts().find(user =>
+    user.email === email && user.password === password
+  );
+
+  if (!account) {
+    message.textContent = "Incorrect email or password.";
+    return;
+  }
+
+  sessionStorage.setItem("kotechUser", JSON.stringify({
+    name: account.name,
+    email: account.email
+  }));
+
+  message.textContent = "Login successful!";
+
+  setTimeout(() => {
+    window.location.href = "/website/cources/cources.html";
+  }, 700);
+});
+
+categories.js
+
+
+const params = new URLSearchParams(window.location.search);
+
+const initialCategory = params.get("category");
+const initialSearch = params.get("search");
+
+if (["coding", "design", "all"].includes(initialCategory)) {
+    categoryFilter.value = initialCategory;
+}
+
+if (initialSearch) {
+    courseSearch.value = initialSearch;
+}
+
+filterCourses();
+
+sign-up.js
+
+
+const signupForm = document.getElementById("signupForm");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
+const message = document.getElementById("signupMessage");
+
+// Show and hide password
+document.getElementById("showPassword").addEventListener("click", () => {
+  if (password.type === "password") {
+    password.type = "text";
+    confirmPassword.type = "text";
+    document.getElementById("showPassword").textContent = "Hide";
+  } else {
+    password.type = "password";
+    confirmPassword.type = "password";
+    document.getElementById("showPassword").textContent = "Show";
+  }
+});
+
+// Create account
+signupForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const passwordValue = password.value;
+  const confirmValue = confirmPassword.value;
+
+  if (passwordValue !== confirmValue) {
+    message.textContent = "Passwords do not match.";
+    message.style.color = "red";
+    return;
+  }
+
+  const accounts = JSON.parse(
+    localStorage.getItem("kotechAccounts") || "[]"
+  );
+
+  const existingAccount = accounts.some(
+    account => account.email === email
+  );
+
+  if (existingAccount) {
+    message.textContent = "This email already has an account. Please log in.";
+    message.style.color = "red";
+    return;
+  }
+
+  accounts.push({
+    name: name,
+    email: email,
+    password: passwordValue
+  });
+
+  localStorage.setItem("kotechAccounts", JSON.stringify(accounts));
+
+  sessionStorage.setItem("kotechUser", JSON.stringify({
+    name: name,
+    email: email
+  }));
+
+  message.textContent = "Account created successfully!";
+  message.style.color = "green";
+
+  setTimeout(() => {
+    window.location.href = "my-courses.html";
+  }, 1000);
+});
+
+
+videos.js
+
+
+const PAYSTACK_PAYMENT_LINK = "PASTE_YOUR_PAYMENT_LINK_HERE";
+
+const MY_CHANNEL_LINK = "PASTE_YOUR_YOUTUBE_CHANNEL_LINK_HERE";
+
+document.getElementById("myChannel").href = MY_CHANNEL_LINK;
+
+document.getElementById("payButton").addEventListener("click", () => {
+  if (!PAYSTACK_PAYMENT_LINK.startsWith("https://")) {
+    alert("The Kotech payment link has not been configured yet.");
+    return;
+  }
+
+  window.location.href = PAYSTACK_PAYMENT_LINK;
+});
+
+
+
+const PAYMENT_LINK = "PASTE_YOUR_PAYSTACK_PAYMENT_LINK_HERE";
+
+document.getElementById("payButton").addEventListener("click", () => {
+  if (!PAYMENT_LINK.startsWith("https://")) {
+    alert("Payment is not configured yet. Please contact Kotech.");
+    return;
+  }
+
+  window.location.href = PAYMENT_LINK;
+});

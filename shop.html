@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books for Sale | Kotech</title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="shop.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Kotech</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="shop.html" class="active">Books</a>
+            <a href="cart.html" class="cart-link">
+                🛒 Cart (<span id="cartCount">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Discover Your Next Book</h1>
+        <p>Explore storybooks, coding books, and design guides at Kotech.</p>
+    </section>
+
+    <main class="shop-container">
+        <div class="shop-heading">
+            <div>
+                <h2>Our Books</h2>
+                <p>Choose your books and add them to your cart.</p>
+            </div>
+
+            <input
+                type="search"
+                id="bookSearch"
+                placeholder="Search books..."
+                aria-label="Search books">
+        </div>
+
+        <p id="message" role="status"></p>
+
+        <section class="book-grid">
+
+            <article class="book-card">
+                <img
+                    src="adventure.png"
+                    alt="Adventure Storybook cover"
+                    class="book-image">
+
+                <div class="book-info">
+                    <span class="category">Storybook</span>
+                    <h3>Adventure Storybook</h3>
+                    <p>A fun adventure story for young readers.</p>
+                    <p class="price">₦2,000</p>
+
+                    <label for="quantity1">Quantity</label>
+                    <input id="quantity1" class="quantity"
+                           type="number" min="1" max="99" value="1">
+
+                    <button class="add-to-cart"
+                            data-name="Adventure Storybook"
+                            data-quantity="quantity1">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img
+                    src="css.png"
+                    alt="HTML for Beginners book cover"
+                    class="book-image">
+
+                <div class="book-info">
+                    <span class="category">Coding</span>
+                    <h3>HTML for Beginners</h3>
+                    <p>Learn how to build your first webpage.</p>
+                    <p class="price">₦3,500</p>
+
+                    <label for="quantity2">Quantity</label>
+                    <input id="quantity2" class="quantity"
+                           type="number" min="1" max="99" value="1">
+
+                    <button class="add-to-cart"
+                            data-name="HTML for Beginners"
+                            data-quantity="quantity2">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <img
+                    src="mine.png"
+                    alt="CSS Storybook cover"
+                    class="book-image">
+
+                <div class="book-info">
+                    <span class="category">Web Design</span>
+                    <h3>CSS Storybook</h3>
+                    <p>Learn how to style beautiful websites.</p>
+                    <p class="price">₦2,500</p>
+
+                    <label for="quantity3">Quantity</label>
+                    <input id="quantity3" class="quantity"
+                           type="number" min="1" max="99" value="1">
+
+                    <button class="add-to-cart"
+                            data-name="CSS Storybook"
+                            data-quantity="quantity3">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+                        <article class="book-card">
+                <img
+                    src="mathematics.png"
+                    alt="jss1 mathtextbook"
+                    class="book-image">
+
+                <div class="book-info">
+                    <span class="category">mathematics book</span>
+                    <h3>mathematics book(used)</h3>
+                    <p>A text book for jss1 students</p>
+                    <p class="price">₦3,000</p>
+
+                    <label for="quantity1">Quantity</label>
+                    <input id="quantity1" class="quantity"
+                           type="number" min="1" max="99" value="1">
+
+                    <button class="add-to-cart"
+                            data-name="mathematics text book"
+                            data-quantity="quantity1">
+                        Add to Cart
+                    </button>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="view-cart">
+            <a href="cart.html">View Cart and Order →</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kotech. Learn coding. Create designs. Discover books.</p>
+    </footer>
+
+</body>
+</html>

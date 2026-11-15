@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Plans | Kotech</title>
+    <link rel="stylesheet" href="learning-plan.css">
+    <script src="learning plans.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Kotech</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="categories.html">Categories</a>
+            <a href="free-courses.html">Free Courses</a>
+            <a href="learning-plans.html" class="active">Learning Plans</a>
+            <a href="shop.html">Books</a>
+            <a href="cart.html">🛒 Cart</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+        <h1>Make a Plan. Learn a Skill.</h1>
+        <p>
+            Follow a simple learning path, practise every week,
+            and build projects as you improve.
+        </p>
+        <a href="#plans" class="hero-button">Explore Learning Plans</a>
+    </section>
+
+    <main class="container">
+
+        <section class="intro">
+            <h2>Choose Your Learning Plan</h2>
+            <p>Start with a goal that matches what you want to learn.</p>
+        </section>
+
+        <section class="plan-grid" id="plans">
+
+            <article class="plan-card">
+                <div class="plan-icon blue">&lt;/&gt;</div>
+                <span class="level">BEGINNER</span>
+                <h3>Web Development Starter</h3>
+                <p>Learn HTML, CSS, and the basics of building a website.</p>
+                <ul>
+                    <li>Learn webpage structure</li>
+                    <li>Style pages with CSS</li>
+                    <li>Build a simple website</li>
+                </ul>
+                <p class="duration">Suggested duration: 4 weeks</p>
+                <button class="plan-button" data-plan="web">
+                    View Learning Plan
+                </button>
+            </article>
+
+            <article class="plan-card">
+                <div class="plan-icon purple">GD</div>
+                <span class="level">BEGINNER</span>
+                <h3>Graphic Design Starter</h3>
+                <p>Learn design principles and practise making graphics.</p>
+                <ul>
+                    <li>Explore colours and fonts</li>
+                    <li>Learn layout and spacing</li>
+                    <li>Create a poster design</li>
+                </ul>
+                <p class="duration">Suggested duration: 3 weeks</p>
+                <button class="plan-button" data-plan="design">
+                    View Learning Plan
+                </button>
+            </article>
+
+            <article class="plan-card">
+                <div class="plan-icon green">JS</div>
+                <span class="level">BEGINNER</span>
+                <h3>JavaScript Starter</h3>
+                <p>Learn programming basics and add interactive features.</p>
+                <ul>
+                    <li>Understand variables</li>
+                    <li>Practise functions and events</li>
+                    <li>Build an interactive project</li>
+                </ul>
+                <p class="duration">Suggested duration: 4 weeks</p>
+                <button class="plan-button" data-plan="javascript">
+                    View Learning Plan
+                </button>
+            </article>
+
+        </section>
+
+        <section class="plan-details" id="planDetails" hidden>
+            <button id="closePlan" class="close-button" type="button">
+                Close Plan ✕
+            </button>
+
+            <h2 id="planTitle">Your Learning Plan</h2>
+            <p id="planDescription"></p>
+
+            <div class="progress-section">
+                <div class="progress-text">
+                    <span>Your progress</span>
+                    <strong id="progressText">0% complete</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div id="weeklyTasks"></div>
+
+            <button id="resetPlan" class="reset-button" type="button">
+                Reset This Plan
+            </button>
+        </section>
+
+        <section class="tips">
+            <h2>Tips for Successful Learning</h2>
+            <div class="tip-grid">
+                <div>
+                    <h3>1. Learn regularly</h3>
+                    <p>Set aside a little time each day or week.</p>
+                </div>
+                <div>
+                    <h3>2. Practise as you learn</h3>
+                    <p>Try the examples yourself instead of only reading.</p>
+                </div>
+                <div>
+                    <h3>3. Build projects</h3>
+                    <p>Use your new skills to create something of your own.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kotech. Learn coding. Create designs. Build your future.</p>
+    </footer>
+
+</body>
+</html>

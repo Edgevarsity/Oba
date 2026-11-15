@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Kotech</title>
+    <link rel="stylesheet" href="carrer.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">KOTECH</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="career.html" class="active">Careers</a>
+                <a href="vid.html">Videos</a>
+                <a href="cart.html">Books & Cart</a>
+                <a href="login.html" class="login-btn">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tagline">BUILD YOUR FUTURE WITH US</p>
+
+            <h1>
+                Turn Your Skills Into
+                <span>Something Amazing.</span>
+            </h1>
+
+            <p>
+                Join the Kotech community and help people learn
+                coding, graphic design, and other valuable skills.
+                Discover opportunities to share your knowledge
+                and grow your career.
+            </p>
+
+            <a href="#jobs" class="primary-btn">Explore Opportunities</a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80"
+                alt="Team members working together"
+            >
+        </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section class="benefits">
+        <div class="section-heading">
+            <p class="tagline">WHY KOTECH?</p>
+            <h2>Grow With Us</h2>
+            <p>Be part of a team that believes in learning and creativity.</p>
+        </div>
+
+        <div class="benefit-grid">
+            <article class="benefit-card">
+                <span>📚</span>
+                <h3>Keep Learning</h3>
+                <p>Improve your skills and share knowledge with others.</p>
+            </article>
+
+            <article class="benefit-card">
+                <span>💡</span>
+                <h3>Share Ideas</h3>
+                <p>Bring your creativity to educational projects.</p>
+            </article>
+
+            <article class="benefit-card">
+                <span>🤝</span>
+                <h3>Work Together</h3>
+                <p>Collaborate with people who enjoy teaching and technology.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Available Jobs -->
+    <section class="jobs" id="jobs">
+        <div class="section-heading">
+            <p class="tagline">CAREER OPPORTUNITIES</p>
+            <h2>Explore Our Positions</h2>
+            <p>Interested in working with Kotech? Explore these example roles.</p>
+        </div>
+
+        <div class="job-list">
+
+            <article class="job-card">
+                <div class="job-info">
+                    <span class="job-icon">💻</span>
+                    <div>
+                        <h3>Web Development Instructor</h3>
+                        <p>Education · Coding</p>
+                    </div>
+                </div>
+
+                <p>
+                    Teach beginners HTML, CSS, JavaScript, and
+                    the fundamentals of website development.
+                </p>
+
+                <a href="#application" class="apply-btn"
+                   data-job="Web Development Instructor">
+                    Apply Now →
+                </a>
+            </article>
+
+            <article class="job-card">
+                <div class="job-info">
+                    <span class="job-icon">🎨</span>
+                    <div>
+                        <h3>Graphic Designer</h3>
+                        <p>Creative · Design</p>
+                    </div>
+                </div>
+
+                <p>
+                    Create attractive graphics, course materials,
+                    illustrations, and website visuals.
+                </p>
+
+                <a href="#application" class="apply-btn"
+                   data-job="Graphic Designer">
+                    Apply Now →
+                </a>
+            </article>
+
+            <article class="job-card">
+                <div class="job-info">
+                    <span class="job-icon">🎬</span>
+                    <div>
+                        <h3>Video Content Creator</h3>
+                        <p>Media · Education</p>
+                    </div>
+                </div>
+
+                <p>
+                    Produce engaging video tutorials about coding,
+                    technology, and creative skills.
+                </p>
+
+                <a href="#application" class="apply-btn"
+                   data-job="Video Content Creator">
+                    Apply Now →
+                </a>
+            </article>
+
+            <article class="job-card">
+                <div class="job-info">
+                    <span class="job-icon">📚</span>
+                    <div>
+                        <h3>Book and Content Editor</h3>
+                        <p>Books · Publishing</p>
+                    </div>
+                </div>
+
+                <p>
+                    Help prepare educational articles, book
+                    descriptions, and learning resources.
+                </p>
+
+                <a href="#application" class="apply-btn"
+                   data-job="Book and Content Editor">
+                    Apply Now →
+                </a>
+            </article>
+
+        </div>
+
+        <p class="notice">
+            These are example positions for the page design, not
+            confirmed job vacancies.
+        </p>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application" id="application">
+        <div class="section-heading">
+            <p class="tagline">TAKE THE NEXT STEP</p>
+            <h2>Interested in Joining Kotech?</h2>
+            <p>Complete this sample form to prepare your application.</p>
+        </div>
+
+        <form id="careerForm">
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="position">Position</label>
+            <select id="position" name="position" required>
+                <option value="">Choose a position</option>
+                <option>Web Development Instructor</option>
+                <option>Graphic Designer</option>
+                <option>Video Content Creator</option>
+                <option>Book and Content Editor</option>
+            </select>
+
+            <label for="message">Why would you like to join Kotech?</label>
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell us about your skills and experience"
+                required
+            ></textarea>
+
+            <button type="submit" class="primary-btn">
+                Submit Application
+            </button>
+
+            <p id="formMessage" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <a href="index.html" class="logo footer-logo">KOTECH</a>
+                <p>Learn skills. Build ideas. Create your future.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="career.html">Careers</a>
+                <a href="vid.html">Videos</a>
+            </div>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 Kotech. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        const jobLinks = document.querySelectorAll(".apply-btn");
+        const position = document.getElementById("position");
+
+        jobLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                position.value = link.dataset.job;
+            });
+        });
+
+        document.getElementById("careerForm").addEventListener("submit", event => {
+            event.preventDefault();
+
+            document.getElementById("formMessage").textContent =
+                "Your form is working, but no application has been sent. Connect a backend or form service to receive applications.";
+
+        });
+    </script>
+
+</body>
+</html>
