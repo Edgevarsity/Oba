@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnHub - Online Courses</title>
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #1c1d1f;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            height: 72px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            gap: 25px;
+            background: white;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #5624d0;
+            white-space: nowrap;
+        }
+
+        .categories {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 550px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 46px;
+            border: 1px solid #333;
+            border-radius: 25px;
+            padding: 0 20px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .login {
+            border: 1px solid #1c1d1f;
+            padding: 12px 18px;
+            font-weight: bold;
+        }
+
+        .signup {
+            background: #5624d0;
+            color: white;
+            padding: 13px 18px;
+            font-weight: bold;
+        }
+
+        .cart {
+            font-size: 20px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 430px;
+            background: #f7f7f7;
+            display: flex;
+            align-items: center;
+            padding: 50px 8%;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .primary-btn {
+            background: #5624d0;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .secondary-btn {
+            background: white;
+            border: 1px solid #333;
+            padding: 15px 25px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* ================= CATEGORIES ================= */
+
+        .section {
+            padding: 55px 7%;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .category {
+            border: 1px solid #ddd;
+            padding: 25px;
+            transition: 0.2s;
+        }
+
+        .category:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            width: 55px;
+            height: 55px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 25px;
+        }
+
+        .category h3 {
+            margin-bottom: 8px;
+        }
+
+        .category p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= COURSES ================= */
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .course-card {
+            border: 1px solid #ddd;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .course-image {
+            height: 170px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 17px;
+        }
+
+        .course-content h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .instructor {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #e59819;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ================= PROMO ================= */
+
+        .promo {
+            background: #1c1d1f;
+            color: white;
+            padding: 60px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .promo-content {
+            max-width: 650px;
+        }
+
+        .promo h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .promo p {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .promo-btn {
+            background: white;
+            color: #1c1d1f;
+            padding: 14px 22px;
+            border: none;
+            font-weight: bold;
+        }
+
+        .promo-image {
+            width: 350px;
+            height: 230px;
+            background: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #aaa;
+        }
+
+        /* ================= INSTRUCTORS ================= */
+
+        .instructor-section {
+            background: #f7f7f7;
+        }
+
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .instructor-card {
+            background: white;
+            padding: 25px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .instructor-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        .instructor-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .instructor-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #1c1d1f;
+            color: white;
+            padding: 50px 7% 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 18px;
+        }
+
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #ccc;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                gap: 12px;
+            }
+
+            .categories,
+            nav a {
+                display: none;
+            }
+
+            .category-grid,
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .promo {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .instructor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .search-box {
+                max-width: 200px;
+            }
+
+            .hero {
+                padding: 40px 25px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .category-grid,
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-image {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            LearnHub
+        </div>
+
+        <div class="categories">
+            Categories
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                placeholder="Search for anything"
+            >
+        </div>
+
+        <nav>
+            <a href="#">Teach</a>
+            <a href="#">My Learning</a>
+
+            <button>&#128269;</button>
+
+            <span class="cart">🛒</span>
+
+            <a href="contact.html" class="login">
+                Log in
+            </a>
+
+            <a href="new.html" class="signup">
+                Sign up
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Learn new skills and build your future
+            </h1>
+
+            <p>
+                Discover thousands of courses taught by experienced
+                instructors. Learn at your own pace and develop skills
+                that can help you achieve your goals.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+                    Explore Courses
+                </button>
+
+                <button class="secondary-btn">
+                    Become an Instructor
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Explore popular categories
+        </h2>
+
+        <p class="section-description">
+            Find courses in the subjects you want to learn.
+        </p>
+
+        <div class="category-grid">
+
+            <div class="category">
+
+                <div class="category-icon">
+                    💻
+                </div>
+
+                <h3>Development</h3>
+
+                <p>
+                    Web development, programming and software.
+                </p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    🎨
+                </div>
+
+                <h3>Design</h3>
+
+                <p>
+                    Photoshop, UI/UX, graphics and creativity.
+                </p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    📊
+                </div>
+
+                <h3>Business</h3>
+
+                <p>
+                    Business, marketing and entrepreneurship.
+                </p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    📸
+                </div>
+
+                <h3>Photography</h3>
+
+                <p>
+                    Photography, editing and visual storytelling.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSES ================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Featured courses
+        </h2>
+
+        <p class="section-description">
+            Learn from experienced instructors and improve your skills.
+        </p>
+
+
+        <div class="course-grid">
+
+
+            <!-- COURSE 1 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <!-- Replace this with your image -->
+
+                    <img
+                         src="hq720.webp" 
+                        alt="Web development course"
+                    >
+
+                </div>
+
+                <div class="course-content">
+
+                    <h3>
+                        Complete Web Development Bootcamp
+                    </h3>
+
+                    <p class="instructor">
+                        Morufat salu
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★ 5.0
+                    </p>
+
+                    <p class="price">
+                        ₦50,000
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 2 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img>
+                        src="HSJD.PNG"
+                        alt="Graphic design course"
+                    >
+
+                </div>
+
+                <div class="course-content">
+
+                    <h3>
+                        Professional Graphic Design
+                    </h3>
+
+                    <p class="instructor">
+                    Quallid odungure
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★★ 5.00
+                    </p>
+
+                    <p class="price">
+                        ₦20,000
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 3 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="download - Copy.jpg"
+                        alt="Photoshop course"
+                    >
+
+                </div>
+
+                <div class="course-content">
+
+                    <h3>
+                        Adobe Photoshop Masterclass
+                    </h3>
+
+                    <p class="instructor">
+                    Akonbi oluwanifemi
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★ 5.0
+                    </p>
+
+                    <p class="price">
+                        ₦20,000
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 4 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="download (46).jpg"
+                        alt="Digital marketing course"
+                    >
+
+                </div>
+
+                <div class="course-content">
+
+                    <h3>
+                        Digital Marketing From Zero
+                    </h3>
+
+                    <p class="instructor">
+                        Sarah Johnson
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★ 5.0
+                    </p>
+
+                    <p class="price">
+                        ₦20,000
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROMO ================= -->
+
+    <section class="promo">
+
+        <div class="promo-content">
+
+            <h2>
+                Become an instructor
+            </h2>
+
+            <p>
+                Share your knowledge with students around the world.
+                Create courses, teach your skills and build your
+                online teaching career.
+            </p>
+
+            <button class="promo-btn">
+                Start Teaching
+            </button>
+
+        </div>
+
+
+        <div class="promo-image">
+
+            <!-- Add your instructor image here -->
+
+            Your Image Here
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INSTRUCTORS ================= -->
+
+    <section class="section instructor-section">
+
+        <h2 class="section-title">
+            Learn from experienced instructors
+        </h2>
+
+        <p class="section-description">
+            Meet some of the instructors sharing their knowledge.
+        </p>
+
+
+        <div class="instructor-grid">
+
+
+            <div class="instructor-card">
+
+                <div class="instructor-image">
+                    Photo
+                </div>
+
+                <h3>
+                    morufat salu
+                </h3>
+
+                <p>
+                    Web developer and technology instructor
+                    with years of experience.
+                </p>
+
+            </div>
+
+
+            <div class="instructor-card">
+
+                <div class="instructor-image">
+                    <img src="download (46).jpg" alt="study">
+                </div>
+
+                <h3>
+                    Sarah Johnson
+                </h3>
+
+                <p>
+                    Digital marketing specialist and educator.
+                </p>
+
+            </div>
+
+
+            <div class="instructor-card">
+
+                <div class="instructor-image">
+                    Photo
+                </div>
+
+                <h3>
+                    akonbi oluwanifemi
+                </h3>
+
+                <p>
+                    Professional designer and Photoshop instructor.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+
+            <div class="footer-column">
+
+                <h3>
+                    LearnHub
+                </h3>
+
+                <p>
+                    Learn new skills from experienced instructors
+                    and build the future you want.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    LearnHub
+                </h3>
+
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Learn
+                </h3>
+
+                <a href="#">Courses</a>
+                <a href="#">Categories</a>
+                <a href="#">Free Courses</a>
+                <a href="#">Learning Plans</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Support
+                </h3>
+
+                <a href="#">Help Center</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Accessibility</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 LearnHub. All rights reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

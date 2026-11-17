@@ -1,0 +1,378 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.7;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navigation */
+header {
+    background: white;
+    box-shadow: 0 2px 12px #0000000d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #1769e0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #333;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #1769e0;
+}
+
+.nav-links .login-btn {
+    background: #1769e0;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 7px;
+}
+
+/* Hero */
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.tagline {
+    color: #1769e0;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.2;
+    margin: 15px 0 20px;
+}
+
+.hero h1 span {
+    color: #1769e0;
+}
+
+.hero-content > p:not(.tagline) {
+    color: #666;
+    margin-bottom: 28px;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.primary-btn {
+    display: inline-block;
+    border: none;
+    background: #1769e0;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #0d4fb5;
+}
+
+/* Section headings */
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin: 8px 0;
+}
+
+.section-heading > p:last-child {
+    color: #666;
+}
+
+/* Benefits */
+.benefits {
+    padding: 70px 5%;
+    background: #f5f8ff;
+}
+
+.benefit-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e5e9f0;
+}
+
+.benefit-card span {
+    font-size: 35px;
+}
+
+.benefit-card h3 {
+    margin: 10px 0;
+}
+
+.benefit-card p {
+    color: #666;
+}
+
+/* Jobs */
+.jobs {
+    max-width: 1000px;
+    margin: auto;
+    padding: 75px 5%;
+}
+
+.job-list {
+    display: grid;
+    gap: 20px;
+}
+
+.job-card {
+    padding: 25px;
+    border: 1px solid #e5e9f0;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    border-color: #1769e0;
+    box-shadow: 0 8px 25px #0000000b;
+}
+
+.job-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.job-icon {
+    font-size: 30px;
+    background: #edf4ff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.job-info h3 {
+    font-size: 19px;
+}
+
+.job-info p {
+    color: #1769e0;
+    font-size: 13px;
+}
+
+.job-card > p {
+    color: #666;
+    margin-bottom: 18px;
+}
+
+.apply-btn {
+    color: #1769e0;
+    font-weight: bold;
+}
+
+.apply-btn:hover {
+    text-decoration: underline;
+}
+
+.notice {
+    color: #777;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* Application form */
+.application {
+    padding: 75px 5%;
+    background: #f5f8ff;
+}
+
+.application form {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px #00000008;
+}
+
+.application label {
+    display: block;
+    margin: 16px 0 6px;
+    font-weight: bold;
+}
+
+.application input,
+.application select,
+.application textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dce7;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.application input:focus,
+.application select:focus,
+.application textarea:focus {
+    outline: 2px solid #1769e0;
+    border-color: transparent;
+}
+
+.application button {
+    margin-top: 22px;
+}
+
+#formMessage {
+    margin-top: 15px;
+    color: #1769e0;
+    overflow-wrap: anywhere;
+}
+
+/* Footer */
+footer {
+    background: #0c1930;
+    color: white;
+    padding: 40px 5% 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #c4ccda;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+}
+
+.footer-links a:hover {
+    color: #7eafff;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #344056;
+    padding-top: 20px;
+    margin-top: 30px;
+    color: #c4ccda;
+    font-size: 13px;
+}
+
+/* Mobile and tablet */
+@media (max-width: 800px) {
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .application form {
+        padding: 20px;
+    }
+}

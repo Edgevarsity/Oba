@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Kotech</title>
+    <link rel="stylesheet" href="/assets/css/courses.css">
+    <script src="/assets/js/courses.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="/index.html" class="logo">Kotech</a>
+
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/pages/learning/courses/courses.html" class="active">Courses</a>
+            <a href="/pages/learning/categories/categories.html"></a>
+            <a href="/pages/learning/courses/courses.html">Free Courses</a>
+            <a href="/pages/learning/plans/learning-plan.html">Learning Plans</a>
+            <a href="/pages/store/shop/shop.html">Books</a>
+            <a href="/pages/store/cart/cart.html">🛒 Cart</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">LEARN SOMETHING NEW</p>
+        <h1>Build Your Skills with Kotech</h1>
+        <p>
+            Learn coding and graphic design step by step,
+            even if you are a complete beginner.
+        </p>
+        <a href="#courseList" class="hero-button">Explore Courses</a>
+    </section>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Explore Our Courses</h2>
+            <p>Choose a subject and start learning at your own pace.</p>
+        </section>
+
+        <div class="filters">
+            <input
+                type="search"
+                id="courseSearch"
+                placeholder="Search for a course..."
+                aria-label="Search courses">
+
+            <select id="categoryFilter" aria-label="Filter courses">
+                <option value="all">All Categories</option>
+                <option value="coding">Coding</option>
+                <option value="design">Graphic Design</option>
+            </select>
+        </div>
+
+        <p id="courseCount" aria-live="polite"></p>
+
+        <section class="course-grid" id="courseList">
+
+            <article class="course-card" data-category="coding">
+                <div class="course-art html-art">
+                    <span>HTML</span>
+                    <small>Build web pages</small>
+                </div>
+                <div class="course-info">
+                    <span class="tag">CODING</span>
+                    <h3>HTML for Beginners</h3>
+                    <p>Learn webpage structure, headings, paragraphs, links, and images.</p>
+                    <p class="level">Beginner · 6 lessons</p>
+                    <button class="start-button"
+                        data-course="html">Start Learning</button>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="coding">
+                <div class="course-art css-art">
+                    <span>CSS</span>
+                    <small>Style your website</small>
+                </div>
+                <div class="course-info">
+                    <span class="tag">CODING</span>
+                    <h3>CSS Web Design</h3>
+                    <p>Learn colours, fonts, layouts, buttons, and responsive design.</p>
+                    <p class="level">Beginner · 5 lessons</p>
+                    <button class="start-button"
+                        data-course="css">Start Learning</button>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="coding">
+                <div class="course-art js-art">
+                    <span>JS</span>
+                    <small>Make websites interactive</small>
+                </div>
+                <div class="course-info">
+                    <span class="tag">CODING</span>
+                    <h3>JavaScript Basics</h3>
+                    <p>Learn variables, functions, buttons, and simple interactions.</p>
+                    <p class="level">Beginner · 6 lessons</p>
+                    <button class="start-button"
+                        data-course="javascript">Start Learning</button>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="design">
+                <div class="course-art design-art">
+                    <span>DESIGN</span>
+                    <small>Create beautiful graphics</small>
+                </div>
+                <div class="course-info">
+                    <span class="tag">GRAPHIC DESIGN</span>
+                    <h3>Graphic Design Basics</h3>
+                    <p>Discover colour combinations, typography, shapes, and layouts.</p>
+                    <p class="level">Beginner · 4 lessons</p>
+                    <button class="start-button"
+                        data-course="design">Start Learning</button>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="design">
+                <div class="course-art poster-art">
+                    <span>POSTERS</span>
+                    <small>Design eye-catching posters</small>
+                </div>
+                <div class="course-info">
+                    <span class="tag">GRAPHIC DESIGN</span>
+                    <h3>Poster Design</h3>
+                    <p>Learn to arrange text, images, and colours into a clear poster.</p>
+                    <p class="level">Beginner · 4 lessons</p>
+                    <button class="start-button"
+                        data-course="poster">Start Learning</button>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="coding">
+                <div class="course-art project-art">
+                    <span>PROJECT</span>
+                    <small>Put your skills together</small>
+                </div>
+                <div class="course-info">
+                    <span class="tag">CODING</span>
+                    <h3>Build Your First Website</h3>
+                    <p>Combine HTML, CSS, and JavaScript to build a simple website.</p>
+                    <p class="level">Beginner · 5 lessons</p>
+                    <button class="start-button"
+                        data-course="website">Start Learning</button>
+                </div>
+            </article>
+
+        </section>
+
+        <p id="emptyMessage" hidden>No courses found. Try another search.</p>
+
+        <section class="lesson-panel" id="lessonPanel" hidden>
+            <button id="closeLesson" class="close-button" type="button">
+                ✕ Close Lesson
+            </button>
+            <p class="tag">YOUR FIRST LESSON</p>
+            <h2 id="lessonTitle">Course lesson</h2>
+            <div id="lessonContent"></div>
+        </section>
+
+        
+<section class="application" id="application" hidden>
+  <h2>Apply for a Course</h2>
+
+  <form id="applicationForm">
+    <label for="studentName">Full Name</label>
+    <input type="text" id="studentName" required
+      placeholder="Enter your full name">
+
+    <label for="studentEmail">Email Address</label>
+    <input type="email" id="studentEmail" required
+      placeholder="Enter your email">
+
+    <label for="selectedCourse">Selected Course</label>
+    <input type="text" id="selectedCourse" readonly>
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <p id="applicationMessage" role="status"></p>
+</section>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kotech. Learn coding. Create designs. Build your future.</p>
+    </footer>
+
+</body>
+</html>

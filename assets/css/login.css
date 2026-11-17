@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+
+.login{
+    width: 80%;
+    margin: auto;
+    background-color: #efefef;
+    text-align: center;
+    height: 80vh;
+    align-content: center;
+}
+
+a{
+    text-decoration: none;
+    font-family: roboto;
+
+}
+
+.input{
+    height: 50px;
+    width: 400px;
+    background-color:black ;
+    margin-bottom: 20px;
+    color: white;
+}
+
+a:active{
+    color: navy; 
+}
+
+button{
+    height: 70px;
+    width: 400px;
+    border: none;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px;
+}
+
+.input::placeholder{
+    color:royalblue;
+    text-align: center;
+}
+
+#anchor{
+    position: absolute ;
+    left: 700px;
+    top: 500px;
+}
+
+.btn{
+    font-size: 1.5rem;
+    
+}

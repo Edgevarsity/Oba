@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Kotech</title>
+    <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="/index.html" class="logo">KOTECH</a>
+
+            <div class="nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/pages/company/about/about.html">About</a>
+                <a href="/pages/company/careers/careers.html">Careers</a>
+                <a href="/pages/company/blog/blog.html" class="active">Blog</a>
+                <a href="/pages/learning/videos/vid.html">Videos</a>
+                <a href="/pages/store/cart/cart.html">Cart</a>
+                <a href="/pages/account/login/login.html" class="login-btn">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tagline">WELCOME TO THE KOTECH BLOG</p>
+
+            <h1>
+                Learn Something New.
+                <span>Every Day.</span>
+            </h1>
+
+            <p>
+                Discover beginner-friendly tutorials, coding tips,
+                graphic design ideas, book recommendations, and
+                technology news to help you grow your skills.
+            </p>
+
+            <a href="#articles" class="primary-btn">
+                Explore Articles
+            </a>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <section class="blog-search">
+        <input
+            type="search"
+            id="blogSearch"
+            placeholder="Search articles..."
+            aria-label="Search blog articles"
+        >
+
+        <select id="categoryFilter" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="coding">Coding</option>
+            <option value="design">Graphic Design</option>
+            <option value="books">Books</option>
+            <option value="technology">Technology</option>
+        </select>
+    </section>
+
+    <!-- Articles -->
+    <main class="articles-section" id="articles">
+        <div class="section-heading">
+            <p class="tagline">LEARN AND GROW</p>
+            <h2>Latest Articles</h2>
+            <p>Helpful ideas for your learning journey.</p>
+        </div>
+
+        <div class="article-grid" id="articleGrid">
+
+            <article class="article-card" data-category="coding">
+                <img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                    alt="Computer displaying code"
+                >
+
+                <div class="article-content">
+                    <span class="category">CODING</span>
+                    <h3>How to Start Learning HTML</h3>
+
+                    <p>
+                        Discover the basics of HTML and learn how
+                        to create your first webpage.
+                    </p>
+
+                    <a href="#html-article" class="read-more">
+                        Read Article →
+                    </a>
+                </div>
+            </article>
+
+            <article class="article-card" data-category="design">
+                <img
+                    src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80"
+                    alt="Graphic design workspace"
+                >
+
+                <div class="article-content">
+                    <span class="category">GRAPHIC DESIGN</span>
+                    <h3>Graphic Design for Beginners</h3>
+
+                    <p>
+                        Learn about colours, fonts, layouts, and
+                        the basics of creating attractive designs.
+                    </p>
+
+                    <a href="#design-article" class="read-more">
+                        Read Article →
+                    </a>
+                </div>
+            </article>
+
+            <article class="article-card" data-category="books">
+                <img
+                    src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80"
+                    alt="Books on library shelves"
+                >
+
+                <div class="article-content">
+                    <span class="category">BOOKS</span>
+                    <h3>Why Reading Helps You Learn</h3>
+
+                    <p>
+                        Explore how reading can improve your
+                        knowledge, vocabulary, and creativity.
+                    </p>
+
+                    <a href="#books-article" class="read-more">
+                        Read Article →
+                    </a>
+                </div>
+            </article>
+
+            <article class="article-card" data-category="coding">
+                <img
+                    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80"
+                    alt="Programming code on a screen"
+                >
+
+                <div class="article-content">
+                    <span class="category">CODING</span>
+                    <h3>JavaScript: Your First Steps</h3>
+
+                    <p>
+                        Understand how JavaScript adds interaction
+                        and useful features to websites.
+                    </p>
+
+                    <a href="#javascript-article" class="read-more">
+                        Read Article →
+                    </a>
+                </div>
+            </article>
+
+            <article class="article-card" data-category="technology">
+                <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                    alt="Electronic circuit board"
+                >
+
+                <div class="article-content">
+                    <span class="category">TECHNOLOGY</span>
+                    <h3>How Technology Shapes Our World</h3>
+
+                    <p>
+                        Explore how technology supports education,
+                        communication, and everyday life.
+                    </p>
+
+                    <a href="#technology-article" class="read-more">
+                        Read Article →
+                    </a>
+                </div>
+            </article>
+
+            <article class="article-card" data-category="design">
+                <img
+                    src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80"
+                    alt="Creative design materials"
+                >
+
+                <div class="article-content">
+                    <span class="category">GRAPHIC DESIGN</span>
+                    <h3>Choosing Colours for Your Designs</h3>
+
+                    <p>
+                        Learn how to combine colours to create
+                        designs that are clear and attractive.
+                    </p>
+
+                    <a href="#colour-article" class="read-more">
+                        Read Article →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="noResults" hidden>No articles found. Try another search.</p>
+    </main>
+
+    <!-- Sample article content -->
+    <section class="featured-article" id="html-article">
+        <p class="tagline">BEGINNER TUTORIAL</p>
+        <h2>How to Start Learning HTML</h2>
+
+        <p>
+            HTML stands for HyperText Markup Language. It provides
+            the structure of a webpage using elements such as headings,
+            paragraphs, images, and links.
+        </p>
+
+        <p>For example, this code creates a simple webpage:</p>
+
+        <pre><code>&lt;h1&gt;Welcome to Kotech&lt;/h1&gt;
+&lt;p&gt;I am learning HTML.&lt;/p&gt;</code></pre>
+
+        <p>
+            Save your code in a file named index.html and open it
+            in your browser to see the result.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <a href="/index.html" class="logo footer-logo">KOTECH</a>
+                <p>Learn skills. Build ideas. Create your future.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="/index.html">Home</a>
+                <a href="/pages/company/about/about.html">About</a>
+                <a href="/pages/company/careers/careers.html">Careers</a>
+                <a href="/pages/company/blog/blog.html">Blog</a>
+                <a href="/pages/learning/videos/vid.html">Videos</a>
+            </div>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 Kotech. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- Blog search JavaScript -->
+    <script>
+        const blogSearch = document.getElementById("blogSearch");
+        const categoryFilter = document.getElementById("categoryFilter");
+        const articles = document.querySelectorAll(".article-card");
+        const noResults = document.getElementById("noResults");
+
+        function filterArticles() {
+            const query = blogSearch.value.toLowerCase().trim();
+            const category = categoryFilter.value;
+            let visibleCount = 0;
+
+            articles.forEach(article => {
+                const text = article.textContent.toLowerCase();
+                const articleCategory = article.dataset.category;
+
+                const matchesText = text.includes(query);
+                const matchesCategory =
+                    category === "all" || category === articleCategory;
+
+                const visible = matchesText && matchesCategory;
+                article.hidden = !visible;
+
+                if (visible) visibleCount++;
+            });
+
+            noResults.hidden = visibleCount !== 0;
+        }
+
+        blogSearch.addEventListener("input", filterArticles);
+        categoryFilter.addEventListener("change", filterArticles);
+    </script>
+
+</body>
+</html>

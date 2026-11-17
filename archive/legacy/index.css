@@ -1,0 +1,405 @@
+.search-box {
+    flex: 1;
+    width: 300px;
+}
+
+.buutton{
+    height:50px;
+    border: 3px solid white;
+}
+
+#goat{
+    text-decoration: none;
+    height: 30px;
+    text-align: center;
+}
+
+#cart{
+    height: 20px;
+    width: 30px;
+}
+
+.yeah{
+    height:40px;
+    width: 50px;
+}
+
+#yesss{
+    background-color: black ;
+   color: white;
+   width: 10cm;
+   text-decoration: none;
+   font-family: cursive;
+}
+
+#love{
+height: 50px;
+
+}
+
+
+ 
+
+
+#ona{
+    background-color: blue;
+    color: white;
+}
+
+#img{
+    width: 100px ;
+    border-radius: 50%;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+/* the stuff below */
+footer {
+    padding: 50px 7% 25px;
+    background: black;
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 18px;
+}
+
+.footer-column p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column a {
+    display: block;
+    margin-bottom: 12px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: white;
+    text-decoration: underline;
+}
+/* the cources */
+.copyright {
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.course-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.course-card {
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.course-image {
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.05);
+}
+
+.course-content {
+    padding: 17px;
+}
+
+.course-content h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.instructor {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 13px;
+}
+
+.rating {
+    margin-bottom: 10px;
+    color: #e59819;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.instructor-section {
+    background: #f7f7f7;
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.instructor-card {
+    padding: 25px;
+    border: 1px solid #ddd;
+    background: white;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.instructor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ddd;
+    color: #777;
+}
+
+.instructor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instructor-card h3 {
+    margin-bottom: 8px;
+}
+
+.instructor-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+/* where there is words like discover and so */
+.hero {
+    min-height: 430px;
+    padding: 70px 8%;
+    display: flex;
+    align-items: center;
+    background: silver;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero p {
+    margin-bottom: 28px;
+    color: #444;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.primary-btn {
+    padding: 15px 25px;
+    border: none;
+    background: #5624d0;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.primary-btn:hover {
+    background: #4019a0;
+}
+
+.secondary-btn {
+    padding: 15px 25px;
+    border: 1px solid #333;
+    background: white;
+    color: #1c1d1f;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.secondary-btn:hover {
+    background: #f2f2f2;
+}
+
+/* responsive on tablet */
+@media (max-width: 750px) {
+
+    header {
+        height: auto;
+        min-height: 65px;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    .search-box {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
+    nav a:not(.login):not(.signup) {
+        display: none;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 50px 25px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section {
+        padding: 45px 20px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promo {
+        padding: 50px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .promo h2 {
+        font-size: 29px;
+    }
+
+    .promo-image {
+        width: 100%;
+        height: 220px;
+    }
+
+    .instructor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* responsive on  small phones*/
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 12px 15px;
+    }
+
+    .login,
+    .signup {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .cart {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}

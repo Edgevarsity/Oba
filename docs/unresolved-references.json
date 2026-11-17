@@ -1,0 +1,10 @@
+[
+  {
+    "file": "pages/learning/plans/learning-plan.html",
+    "reference": "free-courses.html"
+  },
+  {
+    "file": "pages/learning/categories/categories.html",
+    "reference": "free-courses.html"
+  }
+]

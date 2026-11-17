@@ -1,0 +1,96 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f5fa;
+  color: #172b50;
+}
+
+header {
+  background: #101b35;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.account-box {
+  background: white;
+  width: min(92%, 450px);
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px #00000012;
+}
+
+.account-box h1 {
+  margin-bottom: 10px;
+}
+
+.account-box p {
+  line-height: 1.5;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #087bea;
+  color: white;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 22px;
+  background: #087bea;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#accountMessage {
+  margin-top: 18px;
+  color: #087a3e;
+  font-weight: bold;
+}
+
+[hidden] {
+  display: none !important;
+}

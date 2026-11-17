@@ -1,0 +1,158 @@
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --primary: #102a43;
+  --primary-soft: #1d4d7a;
+  --accent: #3f8efc;
+  --accent-soft: #dfeeff;
+  --text: #1d2430;
+  --muted: #5a6475;
+  --border: #dfe7f1;
+  --shadow: 0 12px 30px rgba(16, 42, 67, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 100%);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-soft) 100%);
+  color: #fff;
+  padding: 1.3rem 5vw;
+  box-shadow: 0 8px 18px rgba(16, 42, 67, 0.14);
+}
+
+header h1 {
+  margin: 0 0 0.7rem 0;
+  font-size: clamp(2rem, 2.2vw, 3rem);
+  letter-spacing: 0.04em;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.3rem;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  opacity: 0.8;
+}
+
+.container {
+  max-width: 980px;
+  margin: 2.5rem auto;
+  padding: 2rem 1.4rem 3rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  color: var(--primary);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+main > p {
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem 1.4rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+section h3 {
+  margin: 0 0 0.8rem;
+  color: var(--primary-soft);
+  font-size: 1.35rem;
+}
+
+section p {
+  margin: 0;
+  color: var(--text);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #5aa2ff 100%);
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 22px rgba(63, 142, 252, 0.25);
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(63, 142, 252, 0.3);
+}
+
+footer {
+  background: #0d1d2d;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+}
+
+footer p {
+  margin: 0 0 0.8rem;
+}
+
+footer a {
+  color: #dfeeff;
+  text-decoration: none;
+  margin: 0 0.6rem;
+  font-weight: 600;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 1.1rem 1rem;
+  }
+
+  nav {
+    gap: 0.6rem 1rem;
+  }
+
+  .container {
+    margin-top: 1.5rem;
+    padding: 1rem 0.9rem 2.2rem;
+  }
+
+  section {
+    padding: 1.2rem 1rem;
+  }
+}

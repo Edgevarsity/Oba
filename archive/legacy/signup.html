@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kotech Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+  <script src="signup.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Kotech</a>
+    <a href="index.html">Home</a>
+  </header>
+
+  <main class="signup-container">
+    <div class="signup-box">
+
+      <div class="signup-icon">👨‍🎓</div>
+
+      <h1>Create Your Account</h1>
+      <p>Join Kotech and start learning today.</p>
+
+      <form id="signupForm">
+
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName"
+          placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email"
+          placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <div class="password-box">
+          <input type="password" id="password"
+            placeholder="Create a password" minlength="8" required>
+          <button type="button" id="showPassword">Show</button>
+        </div>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword"
+          placeholder="Enter your password again" required>
+
+        <label class="terms">
+          <input type="checkbox" id="agreeTerms" required>
+          I agree to the Kotech Terms and Privacy Policy.
+        </label>
+
+        <button type="submit" class="signup-button">
+          Create Account
+        </button>
+
+        <p id="signupMessage" role="status"></p>
+
+      </form>
+
+      <p class="login-link">
+        Already have an account?
+        <a href="login.html">Log In</a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Kotech. Learn, Create and Grow.</p>
+  </footer>
+
+</body>
+</html>

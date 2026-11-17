@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kotech Student Account</title>
+  <link rel="stylesheet" href="/assets/css/account.css">
+  <script src="/assets/js/account.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="/index.html">Kotech</a>
+    <a href="/pages/learning/courses/courses.html">Courses</a>
+  </header>
+
+  <main class="account-box">
+    <h1>Student Account</h1>
+    <p>Create an account or log in to continue learning.</p>
+
+    <div class="tabs">
+      <button id="showRegister" class="active">Register</button>
+      <button id="showLogin">Log In</button>
+    </div>
+
+    <form id="registerForm">
+      <label for="registerName">Full name</label>
+      <input id="registerName" required placeholder="Your full name">
+
+      <label for="registerEmail">Email address</label>
+      <input id="registerEmail" type="email" required placeholder="Your email">
+
+      <label for="registerPassword">Password</label>
+      <input id="registerPassword" type="password" minlength="8"
+        required placeholder="At least 8 characters">
+
+      <button type="submit">
+        <a href="/pages/learning/courses/courses.html">Create Account</a>
+      </button>
+    </form>
+
+    <form id="loginForm" hidden>
+      <label for="loginEmail">Email address</label>
+      <input id="loginEmail" type="email" required placeholder="Your email">
+
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" required placeholder="Your password">
+
+      <button type="submit">Log In</button>
+    </form>
+
+    <p id="accountMessage" role="status"></p>
+  </main>
+</body>
+</html>

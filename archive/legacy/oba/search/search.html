@@ -1,0 +1,8 @@
+ <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Live Search App</title> <!--<link rel="stylesheet" href="search.css">--> </head> <body> 
+<div class="search-container"> <h1>Search Anything</h1> <p>Find products, services, users, and more.</p>
+<div class="search-box"> <input type="text" id="searchInput" placeholder="Search for anything..." autocomplete="off" >
+<button id="searchButton">Search</button>
+<div id="suggestions" class="suggestions"></div> </div>
+<div class="search-filters"> <button class="filter active" data-category="all">All</button> <button class="filter" data-category="products">Products</button> <button class="filter" data-category="services">Services</button> <button class="filter" data-category="users">Users</button> </div>
+<div id="results" class="results"></div> </div>
+ <script src="search.js"></script> </body> </html> 
