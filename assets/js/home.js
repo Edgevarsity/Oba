@@ -1,4 +1,4 @@
-const searchInput = document.querySelector("#searh");
+const searchInput = document.querySelector("#search-box");
 const searchButton = document.querySelector("#searchButton");
 const clearButton = document.querySelector("#clearButton");
 const results = document.querySelector("#results");

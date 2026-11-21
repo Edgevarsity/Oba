@@ -94,7 +94,7 @@ nav a.active {
 }
 
 .intro h2,
-.study-tip h2 {
+.tips h2 {
     color: #102a43;
     font-size: 29px;
     margin-bottom: 8px;
@@ -127,15 +127,15 @@ nav a.active {
     margin-bottom: 18px;
 }
 
-.web-icon {
+.plan-icon.blue {
     background: #1769aa;
 }
 
-.js-icon {
+.plan-icon.green {
     background: #bd9200;
 }
 
-.design-icon {
+.plan-icon.purple {
     background: #8749bd;
 }
 
@@ -156,8 +156,7 @@ nav a.active {
     margin-bottom: 15px;
 }
 
-.plan-card ul,
-.study-tip ul {
+.plan-card ul {
     padding-left: 20px;
     margin-bottom: 20px;
 }
@@ -187,7 +186,7 @@ nav a.active {
     background: #102a43;
 }
 
-.learning-panel {
+.plan-details {
     margin-top: 45px;
     padding: 28px;
     background: white;
@@ -205,12 +204,12 @@ nav a.active {
     cursor: pointer;
 }
 
-.learning-panel h2 {
+.plan-details h2 {
     color: #102a43;
     margin: 10px 0;
 }
 
-.progress-area {
+.progress-section {
     margin: 25px 0;
 }
 
@@ -281,16 +280,11 @@ nav a.active {
     color: #991b1b;
 }
 
-.study-tip {
+.tips {
     margin-top: 45px;
     padding: 30px;
     border-radius: 12px;
     background: #e5f2ff;
-}
-
-.study-tip ul {
-    margin-top: 12px;
-    margin-bottom: 0;
 }
 
 footer {
@@ -321,7 +315,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .learning-panel {
+    .plan-details {
         padding: 18px;
     }
 

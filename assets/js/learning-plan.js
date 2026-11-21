@@ -124,10 +124,10 @@ const plans = {
 };
 
 const planButtons = document.querySelectorAll(".plan-button");
-const panel = document.getElementById("learningPanel");
+const panel = document.getElementById("planDetails");
 const title = document.getElementById("planTitle");
 const description = document.getElementById("planDescription");
-const weeksContainer = document.getElementById("planWeeks");
+const weeksContainer = document.getElementById("weeklyTasks");
 const progressText = document.getElementById("progressText");
 const progressBar = document.getElementById("progressBar");
 
@@ -258,7 +258,7 @@ document.getElementById("closePlan").addEventListener("click", () => {
     panel.hidden = true;
 });
 
-document.getElementById("resetProgress").addEventListener("click", () => {
+document.getElementById("resetPlan").addEventListener("click", () => {
     if (!activePlan) return;
 
     const progress = getProgress();
